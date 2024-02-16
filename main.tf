@@ -16,8 +16,8 @@
 # If you're looking for the configuration for the remote backend, you can find that
 # in backend.tf.
 
-module "az_naming" {
-  source      = "git@github.com:makdiuk/terraform_azure_naming_module.git"
+module "azure_naming" {
+  source      = "git@github.com:makdiuk/terraform_module_azure_naming.git"
   solution    = "stacks"
   environment = "dev"
   location    = var.location
@@ -28,9 +28,9 @@ module "az_naming" {
   }
 }
 
-module "az_rg" {
-  source   = "git@github.com:makdiuk/terraform_azure_resource_group_module.git"
-  name     = module.az_naming.name
-  location = module.az_naming.location
-  tags     = module.az_naming.tags
+module "azure_resource_group" {
+  source   = "git@github.com:makdiuk/terraform_module_azure_resource_group.git"
+  name     = module.azure_naming.name
+  location = var.location
+  tags     = module.azure_naming.tags
 }
