@@ -20,7 +20,7 @@ module "az_naming" {
   source      = "git@github.com:makdiuk/terraform_azure_naming_module.git"
   solution    = "stacks"
   environment = "dev"
-  region      = var.region
+  location    = var.location
   alteration  = "01"
 
   tags = {
