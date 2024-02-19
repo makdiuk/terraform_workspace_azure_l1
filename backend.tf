@@ -9,7 +9,7 @@ terraform {
 
     workspaces {
       project = "Stacks"
-      name    = "terraform_workspace_l1"
+      name    = "terraform_workspace_azure_l1"
     }
   }
 

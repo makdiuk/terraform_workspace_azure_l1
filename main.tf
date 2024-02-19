@@ -17,7 +17,7 @@
 # in backend.tf.
 
 module "azure_naming" {
-  source      = "git@github.com:makdiuk/terraform_module_azure_naming.git"
+  source      = "github.com/makdiuk/terraform_module_azure_naming"
   solution    = "stacks"
   environment = "dev"
   location    = var.location
@@ -29,7 +29,7 @@ module "azure_naming" {
 }
 
 module "azure_resource_group" {
-  source   = "git@github.com:makdiuk/terraform_module_azure_resource_group.git"
+  source   = "github.com/makdiuk/terraform_module_azure_resource_group"
   name     = module.azure_naming.name
   location = var.location
   tags     = module.azure_naming.tags
